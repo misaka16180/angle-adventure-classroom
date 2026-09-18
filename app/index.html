@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#166d57">
+<title>角度探险家 · 机器人餐厅</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="blocks.css">
+<link rel="stylesheet" href="duel.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#" aria-label="角度探险家首页"><span class="brand-mark" aria-hidden="true">∠</span><span><strong>角度探险家</strong><small>四年级数学 · 互动课堂</small></span></a>
+  <nav class="main-nav" aria-label="课堂活动">
+    <button data-view="lab"><span>01</span> 角度实验室</button>
+    <button data-view="restaurant" class="active" aria-current="page"><span>02</span> 机器人餐厅</button>
+    <button data-view="quiz"><span>03</span> 角度挑战</button>
+  </nav>
+  <div class="top-actions"><button id="guide-btn" class="icon-button" title="课堂指南">课堂指南</button><button id="fullscreen-btn" class="icon-button" title="进入全屏">⛶ <span>全屏</span></button></div>
+</header>
+<main id="main"></main>
+<footer class="site-footer"><span><i></i> 离线课堂 · 无需登录</span><span>先观察 · 再思考 · 动手验证</span><button id="source-btn">教材依据与使用说明 ↗</button></footer>
+<dialog id="info-dialog"><div class="dialog-top"><span class="eyebrow">TEACHER’S CORNER</span><button id="close-info" class="icon-button" aria-label="关闭说明">✕</button></div><div id="info-content"></div></dialog>
+<div id="toast" role="status" aria-live="polite"></div>
+<script src="blockly.min.js"></script>
+<script src="zh-hans.js"></script>
+<script src="engine.js"></script>
+<script src="replay.js"></script>
+<script src="block-adapter.js"></script>
+<script src="blockly-adapter.js"></script>
+<script src="angle-lab.js"></script>
+<script src="duel-model.js"></script>
+<script src="duel.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

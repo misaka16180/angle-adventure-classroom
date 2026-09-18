@@ -1,0 +1,196 @@
+/* The restaurant is a full-height teaching workspace, not a landing page. */
+.python-code{background:#153e35;color:#eff1d4;padding:23px;border-radius:14px;font:17px/1.8 Consolas,monospace;overflow:auto;white-space:pre-wrap}
+.restaurant-active .site-footer{display:none}
+.restaurant-main .classroom-workspace{grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:10px;height:100%;align-items:stretch}
+.restaurant-main .board-card,.restaurant-main .block-planner{display:flex;flex-direction:column;min-width:0;min-height:0;border-radius:12px;box-shadow:none;overflow:hidden}
+.task-bar{display:flex;align-items:center;gap:10px;padding:8px 12px;flex:none;background:#fffefa;border-bottom:1px solid var(--line)}
+.task-bar h2{font-size:18px;white-space:nowrap;margin:0 6px 0 0}
+.task-bar .level-tabs{display:flex;flex:1;gap:6px;padding:0;min-width:0}
+.task-bar .level-tabs button{font-size:15px;min-height:44px;padding:8px 10px;border-radius:8px;white-space:nowrap}
+.task-bar .level-num{font-size:14px;margin-right:4px}.task-bar .level-num:empty{display:none}
+.task-bar .text-button{font-size:14px;min-height:44px;padding:7px 11px;white-space:nowrap}
+.restaurant-main .mission-strip{padding:6px 12px;min-height:40px;border-top:0;gap:8px;flex:none;flex-wrap:nowrap}
+.restaurant-main .mission-strip>strong{display:none}.restaurant-main .route-seq{font-size:14px;gap:6px;flex-wrap:nowrap;white-space:nowrap}
+.restaurant-main .route-chip{min-width:26px;height:26px;padding:0 6px;border-radius:6px}.mission-rule{margin-left:auto;font-size:13px;color:var(--muted);white-space:nowrap}
+.restaurant-main .map-wrap{flex:1;min-height:0;position:relative;overflow:hidden;padding:0;background:#fcfcf7}
+.restaurant-main #map{position:absolute;inset:8px;width:calc(100% - 16px);height:calc(100% - 16px);min-height:0;max-height:none}
+.restaurant-main .board-footer{flex:none;min-height:42px;padding:3px 12px;gap:12px;flex-wrap:nowrap;font-size:14px;background:#fffefa}
+.restaurant-main #cycle-text{flex:1;min-width:0}.restaurant-main #task-detail{min-height:38px;padding:6px 8px;margin-left:auto;background:transparent;color:var(--muted);font-size:13px;white-space:nowrap}
+.restaurant-main .compact-feedback{flex:none;margin:0;min-height:44px;padding:8px 12px;border:0;border-top:1px solid var(--line);border-radius:0;gap:8px;background:#f1f4ea}
+.compact-feedback .feedback-icon,.compact-feedback h3{display:none}.compact-feedback>div{min-width:0}.restaurant-main .compact-feedback p{font-size:15px;line-height:1.5;margin:0}.restaurant-main .compact-feedback.success{background:#e3f0de}.restaurant-main .compact-feedback.error{background:#fff0e3}
+.restaurant-main .real-blockly-editor{flex:1;display:flex;min-height:0;padding:0}
+#blockly-workspace.robot-blockly-shell{position:relative;display:flex;flex:1;flex-direction:column;min-width:0;min-height:0;height:auto;background:#fbfcf7;overflow:hidden;touch-action:none}
+.robot-block-toolbar{display:flex;align-items:center;gap:6px;flex-wrap:nowrap;padding:8px 10px;min-height:60px;background:#fffefa;border-bottom:1px solid var(--line);flex:none}
+.robot-block-toolbar:before{content:'积木编程';font-size:18px;font-weight:700;white-space:nowrap;margin-right:auto}
+.robot-block-toolbar button{flex:none;min-width:44px;min-height:44px;padding:7px 10px;border:1px solid #cfdbcb;border-radius:8px;background:#f8faf2;color:#335247;font-size:15px;line-height:1.15;touch-action:manipulation;cursor:pointer}
+.robot-block-toolbar button[data-block-tool=focus]{background:#e7f0df;margin-left:auto}.robot-block-toolbar button[data-block-tool=more]{background:#e8eee2}.robot-block-toolbar button[data-block-tool=delete]{color:#985240}
+.robot-block-toolbar button:hover{background:#e5eedc}.robot-block-toolbar button:disabled{opacity:.45}
+.robot-block-more-panel{position:absolute;top:64px;right:10px;z-index:40;width:350px;max-width:calc(100% - 20px);padding:12px;display:grid;grid-template-columns:1fr 1fr;gap:8px;background:#fffef8;border:1px solid #c4d3bd;border-radius:13px;box-shadow:0 10px 30px #233a3433}
+.robot-block-more-panel[hidden]{display:none}.robot-block-more-panel button{min-height:48px;padding:8px;border:1px solid #d3dece;border-radius:8px;font-size:16px;background:#f0f4e8;text-align:center}.robot-block-more-panel #clear-program{color:#99503c}
+.robot-blockly-viewport{position:relative;flex:1;min-height:0;width:100%;overflow:hidden;touch-action:none}
+.robot-blockly-viewport>.robot-blockly-host{position:absolute;left:0;top:0;transform-origin:0 0;width:100%;min-height:0;touch-action:none;overflow:hidden}
+.robot-blockly-host .blocklySvg{position:absolute;inset:0;background-color:#fbfcf7!important;background-image:radial-gradient(#dce6d6 1px,transparent 1px)!important;background-size:24px 24px!important}
+.robot-blockly-host .blocklyFlyoutBackground{fill:#eef2e7;fill-opacity:1;stroke:#d0dccb}
+.robot-blockly-host .blocklyText{font-family:'Microsoft YaHei','PingFang SC',sans-serif!important;font-size:17px!important;font-weight:600!important}
+.robot-blockly-host .blocklyFieldRect{fill:#fffdf1!important;fill-opacity:1!important;stroke:#ffffff80!important}.robot-blockly-host .blocklyFieldText{fill:#214337!important}.robot-blockly-host .blocklyScrollbarHandle{fill:#a5b99a}
+.robot-block-status{display:none;position:absolute;bottom:10px;left:10px;z-index:5;max-width:calc(100% - 20px);padding:7px 10px;border:1px solid #cbd8c1;border-radius:8px;background:#f3f6e9f2;color:#516c46;font-size:13px;line-height:1.4;pointer-events:none}
+.robot-block-status.has-message{display:block}.robot-block-status.error{color:#a44831;background:#fcf0e8}
+.robot-blockly-shell.is-locked .robot-blockly-viewport:after{content:'正在演示，暂停后可编辑';position:absolute;inset:0;z-index:20;background:#fbfcf708;color:#2c654a;display:flex;align-items:flex-end;justify-content:center;padding:14px;font-weight:700;touch-action:none}
+.restaurant-main .run-controls{flex:none;display:grid;grid-template-columns:auto auto auto 1fr 1.6fr;gap:8px;padding:8px 10px;border-top:1px solid var(--line);background:#fffefa}
+.restaurant-main .run-controls button{min-height:48px;font-size:17px;border-radius:9px;white-space:nowrap}.restaurant-main .reset-button,.restaurant-main .speed-button{font-size:15px!important;font-weight:400;padding:8px 12px;background:#f0f3e8}
+.block-planner.blockly-focused{position:fixed;inset:8px;z-index:1000;display:flex;flex-direction:column;border-radius:12px;box-shadow:0 0 0 100vmax #102e2977;background:#fffdf6;max-height:calc(var(--screen-h,100dvh) - 16px)}
+@media(min-width:900px){
+ body.restaurant-active{height:var(--screen-h,100dvh);overflow:hidden;display:flex;flex-direction:column}
+ .restaurant-active .topbar{flex:none;height:60px;min-height:60px;padding:6px 12px;gap:14px}.restaurant-active .brand-mark{width:36px;height:36px;border-radius:10px;font-size:32px}.restaurant-active .brand{gap:9px}.restaurant-active .brand strong{font-size:20px}.restaurant-active .brand small{display:none}
+ .restaurant-active .main-nav{padding:3px;gap:3px;border-radius:10px}.restaurant-active .main-nav button{min-height:44px;padding:8px 18px;font-size:16px;border-radius:8px}.restaurant-active .main-nav span{display:none}.restaurant-active .top-actions{gap:7px}.restaurant-active .icon-button{min-height:44px;padding:8px 12px;font-size:14px}
+ #main.restaurant-main{flex:1;min-height:0;width:100%;max-width:none;padding:8px;margin:0}
+}
+@media(min-width:1600px){.restaurant-active .main-nav button{font-size:18px;padding:8px 24px}.task-bar h2,.robot-block-toolbar:before{font-size:20px}.task-bar .level-tabs button,.robot-block-toolbar button{font-size:17px}.restaurant-main .run-controls button{font-size:19px}.restaurant-main .board-footer{font-size:15px}.restaurant-main .compact-feedback p{font-size:16px}}
+@media(min-width:900px) and (max-width:1450px){.robot-block-toolbar{gap:4px;padding:8px}.robot-block-toolbar:before{font-size:16px}.robot-block-toolbar button{padding:7px 8px;font-size:14px}.task-bar{gap:7px;padding:8px}.task-bar h2{font-size:16px;margin-right:0}.task-bar .level-tabs button{padding:8px 6px;font-size:14px}.task-bar .text-button{font-size:13px;padding:7px 8px}.mission-rule{display:none}.restaurant-main .board-footer{font-size:12px;gap:8px}.restaurant-main .compact-feedback p{font-size:14px}}
+@media(min-width:900px) and (max-width:1100px){.robot-block-toolbar:before{display:none}.task-bar h2{display:none}.restaurant-active .brand strong{font-size:17px}.restaurant-active .main-nav button{font-size:15px;padding:8px 12px}.restaurant-main .route-seq{gap:4px;font-size:12px}.restaurant-main .route-chip{min-width:23px;height:24px;padding:0 4px}}
+@media(max-width:899px){#main.restaurant-main{padding:10px;min-height:0}.restaurant-main .classroom-workspace{grid-template-columns:1fr;height:auto}.restaurant-main .board-card{height:600px}.restaurant-main .block-planner{height:670px}.robot-block-toolbar{gap:4px;padding:8px;flex-wrap:wrap}.robot-block-toolbar:before{display:none}.robot-block-toolbar button{padding:7px 8px;font-size:14px}.robot-block-more-panel{top:64px}.task-bar h2{font-size:16px}.mission-rule{display:none}.restaurant-main .route-seq{font-size:12px;gap:4px}.restaurant-main .route-chip{min-width:23px;height:24px;padding:0 4px}.restaurant-main .board-footer{font-size:12px;gap:8px}.restaurant-main .compact-feedback p{font-size:14px}.block-planner.blockly-focused{height:calc(var(--screen-h,100dvh) - 16px)}}
+@media(max-width:480px){.restaurant-active .topbar{padding:10px}.restaurant-active .brand-mark{display:none}.restaurant-active .brand small{display:none}.restaurant-active .brand strong{font-size:17px}.restaurant-active .main-nav{margin:0}.restaurant-main .board-card{height:470px}.task-bar h2{display:none}.task-bar{padding:6px;gap:5px}.task-bar .level-tabs{gap:4px}.task-bar .level-tabs button{font-size:12px;padding:6px}.task-bar .text-button{font-size:12px;padding:6px}.restaurant-main .mission-strip{padding:5px 6px}.restaurant-main .route-seq{gap:3px}.restaurant-main .run-controls{gap:5px;padding:7px}.restaurant-main .run-controls button{font-size:14px;padding:7px}.restaurant-main #speed-btn{display:none}.restaurant-main .run-controls{grid-template-columns:auto 1fr 1.5fr}.robot-block-toolbar button{font-size:12px;min-width:39px;padding:7px}.robot-blockly-host .blocklyText{font-size:16px!important}}
+
+.blockly-number-pad,.blockly-help-dialog{border:1px solid #c3d3bc;border-radius:22px;background:#fffef7;box-shadow:0 22px 90px #142d2850;color:#29463b;padding:22px;max-height:94dvh;overflow:auto;font-family:inherit}
+.blockly-number-pad{width:430px;max-width:calc(100vw - 30px)}
+.blockly-number-pad::backdrop,.blockly-help-dialog::backdrop{background:#123d3380;backdrop-filter:blur(2px)}
+.bn-title{display:flex;justify-content:space-between;align-items:center;gap:20px;font-size:25px}.bn-title button{width:48px;height:48px;border-radius:11px;background:#eaf0df;border:1px solid #d2dfc8;font-size:26px;color:#4d6850}
+.bn-display{border:2px solid #86a47b;border-radius:14px;background:#edf3e3;margin:16px 0;display:flex;align-items:center;justify-content:center;min-height:70px}.bn-display output{font-size:42px;font-weight:700;color:#215845;line-height:1.4}
+.bn-keys{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.bn-keys button{min-height:60px;border-radius:12px;background:#f0f3e8;border:1px solid #d1dcc8;font-size:28px;color:#314e42;touch-action:manipulation}.bn-keys button:nth-last-child(3){font-size:20px}.bn-help{min-height:24px;color:#63735b;font-size:15px;margin:12px 0}.bn-help.error{color:#a24630}.bn-actions{display:grid;grid-template-columns:1fr 2fr;gap:10px}.bn-actions button{min-height:54px;border-radius:12px;font-size:20px;border:1px solid #cad6bd;background:#edf1e1;color:#42633b}.bn-actions button:last-child{background:#23654e;color:#fff;border-color:#23654e}
+.blockly-help-dialog{width:680px;max-width:calc(100vw - 30px)}.blockly-help-dialog h2{margin-top:0;font-size:25px}.blockly-help-dialog li{margin:13px 0;font-size:18px;line-height:1.6}.blockly-help-dialog button{min-height:52px;width:100%;border:0;border-radius:12px;background:#23654e;color:#fff;font-size:19px}
+
+/* Preserve task identities, completion marks and live teaching prompts. */
+.restaurant-main .task-heading{flex:none;white-space:nowrap}.restaurant-main .task-heading h2{font-size:18px;margin:0}.restaurant-main .task-heading p{display:none}
+.restaurant-main .task-bar .level-tabs button{padding-left:8px;padding-right:8px}.restaurant-main .level-num{font:600 13px Arial,sans-serif;opacity:.75}
+.restaurant-main .compact-feedback{min-height:64px;padding:8px 12px;gap:8px}.restaurant-main .compact-feedback .feedback-icon{display:block;font-size:18px}.restaurant-main .compact-feedback h3{display:block;font-size:15px;line-height:1.3;margin:0 0 3px}.restaurant-main .compact-feedback p{font-size:14px;line-height:1.45;white-space:normal;overflow:visible}.restaurant-main .compact-feedback>div{min-width:0}
+@media(min-width:1600px){.restaurant-main .compact-feedback h3{font-size:16px}.restaurant-main .compact-feedback p{font-size:15px}}
+@media(min-width:900px) and (max-width:1450px){.restaurant-main .task-heading h2{font-size:16px}.restaurant-main .task-bar .level-tabs button{padding-left:6px;padding-right:6px;font-size:14px}.restaurant-main .task-heading{display:none}.restaurant-main .compact-feedback{min-height:61px;padding:6px 10px}.restaurant-main .compact-feedback h3{font-size:14px}.restaurant-main .compact-feedback p{font-size:13px}}
+@media(max-width:899px){.restaurant-main .task-heading{display:none}.restaurant-main .task-bar .level-tabs button{font-size:13px}.restaurant-main .level-num{font-size:12px;margin-right:3px}}
+
+/* Keep the familiar lesson card on the left while giving the live Blockly
+   editor the larger teaching surface on the right. */
+@media(min-width:900px){
+ .restaurant-active .topbar{height:76px;min-height:76px;padding:10px 24px}
+ .restaurant-active .brand-mark{width:42px;height:42px;border-radius:13px;font-size:38px}
+ .restaurant-active .brand strong{font-size:22px}
+ .restaurant-active .brand small{display:block;font-size:11px;margin-top:3px}
+ .restaurant-active .main-nav span{display:inline}
+ .restaurant-active .site-footer{display:flex;flex:none;width:100%;max-width:none;height:32px;min-height:32px;margin:0;padding:0 24px;font-size:11px}
+ .restaurant-active .site-footer button{min-height:30px;padding:4px 0;font-size:11px}
+ #main.restaurant-main{padding:14px 24px 0}
+ .restaurant-main .classroom-workspace{grid-template-columns:minmax(0,.84fr) minmax(0,1.16fr);gap:18px;height:100%}
+ .restaurant-main .restaurant-lesson{display:flex;flex-direction:column;min-width:0;min-height:0;height:100%;gap:12px}
+ .restaurant-main .restaurant-intro{flex:none;padding:5px 2px 2px}
+ .restaurant-main .restaurant-intro .eyebrow{font-size:10px;letter-spacing:1.8px}
+ .restaurant-main .restaurant-intro h1{font-size:clamp(24px,2.1vw,34px);line-height:1.15;margin:5px 0 4px;letter-spacing:-.5px}
+ .restaurant-main .restaurant-intro p{font-size:15px;line-height:1.5;color:var(--muted);margin:0}
+ .restaurant-main .restaurant-lesson>.board-card{flex:1;min-height:0}
+ .restaurant-main .board-card,.restaurant-main .block-planner{border-radius:18px;box-shadow:var(--shadow)}
+ .restaurant-main .restaurant-lesson>.compact-feedback{flex:none;border:1px solid #dddfcb;background:#eeefe0;border-radius:14px;min-height:70px;margin:0;padding:10px 16px}
+ .restaurant-main .restaurant-lesson>.compact-feedback.success{background:#e3f0de;border-color:#bcd9b7}
+ .restaurant-main .restaurant-lesson>.compact-feedback.error{background:#fff0e3;border-color:#eacdb7}
+ .restaurant-main .restaurant-lesson>.compact-feedback h3{font-size:16px}
+ .restaurant-main .restaurant-lesson>.compact-feedback p{font-size:14px;line-height:1.5}
+ .restaurant-main .task-bar{padding:12px 16px 10px;border-bottom:0}
+ .restaurant-main .task-heading{display:block}
+ .restaurant-main .task-heading h2{display:block;font-size:20px}
+ .restaurant-main .task-heading p{display:block;margin:4px 0 0;font-size:13px;color:var(--muted);white-space:nowrap}
+ .restaurant-main .task-bar .text-button{margin-left:auto}
+ .restaurant-main .board-card>.level-tabs{padding:0 16px 10px;gap:8px;flex:none}
+ .restaurant-main .board-card>.level-tabs button{min-height:44px;font-size:15px;padding:8px 6px}
+ .restaurant-main .board-card>.mission-strip{padding:6px 16px;min-height:42px}
+ .restaurant-main .mission-strip>strong{display:block;font-size:12px}
+ .restaurant-main .board-card>.map-wrap{flex:1;min-height:0}
+ .restaurant-main .board-card>.board-footer{min-height:44px;padding:2px 16px;font-size:13px}
+ .restaurant-main .block-planner{height:100%;}
+ .robot-block-toolbar:before{content:'我的积木程序'}
+}
+@media(min-width:900px) and (max-width:1450px){
+ .restaurant-active .topbar{height:70px;min-height:70px;padding:8px 16px}
+ .restaurant-active .brand strong{font-size:20px}
+ .restaurant-active .brand small{font-size:10px;letter-spacing:1px}
+ #main.restaurant-main{padding:10px 16px 0}
+ .restaurant-main .classroom-workspace{gap:14px}
+ .restaurant-main .restaurant-lesson{gap:10px}
+ .restaurant-main .restaurant-intro h1{font-size:26px}
+ .restaurant-main .restaurant-intro p{font-size:13px}
+ .restaurant-main .task-bar{padding:9px 12px 8px}
+ .restaurant-main .task-heading h2{font-size:18px}
+ .restaurant-main .task-heading p{font-size:12px}
+ .restaurant-main .board-card>.level-tabs{padding:0 12px 8px;gap:6px}
+ .restaurant-main .board-card>.level-tabs button{font-size:14px}
+ .restaurant-main .board-card>.mission-strip{padding:5px 12px;gap:7px}
+ .restaurant-main .route-seq{gap:4px;font-size:13px}
+ .restaurant-main .route-chip{min-width:24px;padding:0 4px}
+ .restaurant-main .board-card>.board-footer{padding:2px 10px;font-size:12px;gap:8px}
+ .restaurant-main .restaurant-lesson>.compact-feedback{padding:8px 12px;min-height:66px}
+ .restaurant-main .restaurant-lesson>.compact-feedback h3{font-size:14px}
+ .restaurant-main .restaurant-lesson>.compact-feedback p{font-size:13px}
+}
+@media(min-width:900px) and (max-width:1100px){
+ .restaurant-main .mission-strip>strong{display:none}
+ .restaurant-main .route-seq{font-size:12px}
+ .restaurant-main .task-heading p{font-size:11px}
+ .restaurant-main .board-card>.level-tabs button{font-size:12px}
+}
+@media(max-width:899px){
+ .restaurant-main .restaurant-intro{margin:4px 2px 16px}
+ .restaurant-main .restaurant-intro .eyebrow{font-size:10px}
+ .restaurant-main .restaurant-intro h1{font-size:28px;margin:6px 0}
+ .restaurant-main .restaurant-intro p{font-size:14px;color:var(--muted);margin:0}
+ .restaurant-main .task-heading{display:block;flex:1;min-width:0;white-space:normal}
+ .restaurant-main .task-heading h2{display:block;font-size:18px}
+ .restaurant-main .task-heading p{display:block;font-size:11px;line-height:1.5;margin:3px 0 0}
+ .restaurant-main .board-card>.level-tabs{padding:4px 10px 10px;gap:5px}
+ .restaurant-main .board-card>.level-tabs button{min-height:44px;font-size:13px;padding:7px 3px}
+ .restaurant-main .restaurant-lesson>.compact-feedback{margin-top:10px;border:1px solid var(--line);border-radius:12px}
+}
+@media(max-width:480px){
+ .restaurant-main .run-controls{grid-template-columns:1fr 1fr}
+ .restaurant-main #back-step,.restaurant-main #reset-robot{min-height:44px}
+ .restaurant-main .run-controls #run-btn{grid-column:2}
+}
+
+/* Small, non-blocking encouragement cues for the touch classroom.  They sit
+   inside the map, never cover the Blockly workspace or controls, and disappear
+   on their own after each delivery. */
+#encouragement-layer{pointer-events:none}
+.table-cheer{pointer-events:none}
+.table-cheer .table-top{transform-box:fill-box;transform-origin:center;animation:table-cheer-pop .78s cubic-bezier(.2,.8,.25,1) both}
+.table-cheer .table-check{animation:table-check-pop .78s ease-out both;transform-box:fill-box;transform-origin:center}
+.encouragement-star{pointer-events:none;fill:#d29b29;font-size:27px;font-weight:700;text-anchor:middle;dominant-baseline:middle;opacity:0;transform-box:fill-box;transform-origin:center;animation:encouragement-star-rise .85s ease-out both}
+.success-star{fill:#166d57;font-size:32px;animation-duration:1.1s}
+@keyframes table-cheer-pop{
+  0%{transform:scale(1)}
+  22%{transform:scale(1.12)}
+  52%{transform:scale(.97)}
+  78%{transform:scale(1.035)}
+  100%{transform:scale(1)}
+}
+@keyframes table-check-pop{
+  0%{opacity:0;transform:scale(.6)}
+  35%{opacity:1;transform:scale(1.15)}
+  100%{opacity:1;transform:scale(1)}
+}
+@keyframes encouragement-star-rise{
+  0%{opacity:0;transform:translateY(10px) scale(.45) rotate(-12deg)}
+  22%{opacity:1;transform:translateY(0) scale(1) rotate(0)}
+  100%{opacity:0;transform:translateY(-18px) scale(.82) rotate(10deg)}
+}
+@media(prefers-reduced-motion:reduce){
+  .table-cheer .table-top,.table-cheer .table-check{animation:none!important}
+  .encouragement-star{animation:none!important;opacity:0!important}
+}
+
+/* The pickup point is a teaching landmark: it is both the start and the
+   required finish, with a fixed right-facing parking arrow. */
+.pickup-pad{fill:#e7f1e2;fill-opacity:.9;stroke:#6f9f78;stroke-width:2;stroke-dasharray:5 4}
+.pickup-ring{fill:none;stroke:#a5c5a0;stroke-width:2}
+.pickup-facing-arrow{fill:none;stroke:#166d57;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.pickup-facing-label{font-size:13px;font-weight:700;fill:#3d7351;letter-spacing:.5px}
+#pickup-point.is-ready .pickup-pad{fill:#d9edd7;stroke:#3f8958;stroke-width:3}
+#pickup-point.is-ready .pickup-facing-arrow{stroke:#166d57;stroke-width:4}
+.pickup-status{white-space:nowrap;color:#687a62;font-size:13px}
+.pickup-status.is-ready{color:#2e743b;font-weight:700}.pickup-status.is-waiting{color:#a0602e;font-weight:700}
+@media(min-width:900px) and (max-width:1450px){.pickup-status{font-size:12px}.pickup-facing-label{font-size:12px}}
+@media(max-width:899px){.pickup-status{font-size:12px}}

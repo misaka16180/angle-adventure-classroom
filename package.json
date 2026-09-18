@@ -1,0 +1,8 @@
+{
+  "name": "angle-adventure-classroom",
+  "private": true,
+  "scripts": {
+    "test": "node tests/engine-tests.cjs && node --test tests/duel-model-tests.cjs && node tests/replay-tests.cjs",
+    "build": "python scripts/build.py"
+  }
+}
