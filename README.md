@@ -54,7 +54,7 @@
 
 ### 离线版
 
-在 [Releases](https://github.com/misaka16180/angle-adventure-classroom/releases/latest) 下载 `角度探险家-离线课堂.zip`，解压后直接打开其中的 `角度探险家.html`。也可以只把该 HTML 文件复制到 U 盘或教师电脑；核心脚本、Blockly 和图标已经内嵌，不依赖网络。
+在 [Releases](https://github.com/misaka16180/angle-adventure-classroom/releases/latest) 下载 `angle-adventure-classroom-offline.zip`，解压后直接打开其中的 `角度探险家.html`（Release 同时提供 `angle-adventure-classroom.html` 单文件）。也可以只把该 HTML 文件复制到 U 盘或教师电脑；核心脚本、Blockly 和图标已经内嵌，不依赖网络。
 
 离线包保留 `THIRD-PARTY-NOTICES.txt`，请不要删除或单独分发其中的第三方声明。
 
