@@ -140,8 +140,8 @@ Pages 使用根目录生成的 `index.html`。推送默认分支后，在仓库 
 
 推荐用 `v1.0.0` 作为第一次公开发布，附件包括：
 
-- `dist/角度探险家-离线课堂.zip`；
-- 可选的 `dist/角度探险家.html`；
+- `angle-adventure-classroom-offline.zip`（Release 附件名，内容来自 `dist/角度探险家-离线课堂.zip`）；
+- `angle-adventure-classroom.html`（Release 附件名，内容来自 `dist/角度探险家.html`）；
 - 当前 `README.md` 和教师指南的链接说明。
 
 Release 页面可使用 [releases/latest](https://github.com/misaka16180/angle-adventure-classroom/releases/latest) 作为下载入口。版本号更新时，把截图和文档一起检查，不要让 README 宣传新功能而离线包仍是旧构建。
