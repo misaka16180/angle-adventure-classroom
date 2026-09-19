@@ -1,0 +1,5 @@
+app/blockly.min.js linguist-vendored
+app/zh-hans.js linguist-vendored
+app/media/* linguist-vendored
+index.html linguist-generated
+dist/* linguist-generated

@@ -4,3 +4,8 @@ playwright-report/
 test-results/
 .DS_Store
 Thumbs.db
+__pycache__/
+*.pyc
+# ASCII aliases are generated for Release uploads, not duplicated in Git.
+dist/angle-adventure-classroom.html
+dist/angle-adventure-classroom-offline.zip

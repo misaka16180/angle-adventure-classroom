@@ -22,7 +22,7 @@
 <table>
 <tr>
 <td width="50%"><a href="docs/images/01-restaurant.png"><img src="docs/images/01-restaurant.png" alt="机器人餐厅主界面" width="100%"></a><br><b>01 · 机器人餐厅</b><br>左侧地图显示取餐口、餐桌和停靠朝向；右侧是可拖动的 Blockly 编程区。</td>
-<td width="50%"><a href="docs/images/02-angle-lab.png"><img src="docs/images/02-angle-lab.png" alt="角度实验室主界面" width="100%"></a><br><b>02 · 角度实验室</b><br>拖动绿色活动边，观察角的开口变化，再用量角器读数。</td>
+<td width="50%"><a href="docs/images/02-angle-lab.png"><img src="docs/images/02-angle-lab.png" alt="角度实验室主界面" width="100%"></a><br><b>02 · 角度实验室</b><br>拖动橙色圆点改变活动边，观察角的开口变化，再用量角器读数。</td>
 </tr>
 <tr>
 <td><a href="docs/images/03-touch-keypad.png"><img src="docs/images/03-touch-keypad.png" alt="触屏数字盘" width="100%"></a><br><b>03 · 触屏数字盘</b><br>点积木中的白色数字或角度读数即可输入，不依赖系统键盘。</td>
@@ -56,7 +56,7 @@
 
 在 [Releases](https://github.com/misaka16180/angle-adventure-classroom/releases/latest) 下载 `angle-adventure-classroom-offline.zip`，解压后直接打开其中的 `角度探险家.html`（Release 同时提供 `angle-adventure-classroom.html` 单文件）。也可以只把该 HTML 文件复制到 U 盘或教师电脑；核心脚本、Blockly 和图标已经内嵌，不依赖网络。
 
-离线包保留 `THIRD-PARTY-NOTICES.txt`，请不要删除或单独分发其中的第三方声明。
+离线包附有教师使用指南、使用说明、`images/` 中的完整截图和 `THIRD-PARTY-NOTICES.txt`。阅读图文指南时请保留解压后的目录结构；重新分发应用时请一并保留第三方声明。
 
 ## 大屏与触控要求
 
@@ -84,7 +84,7 @@
 | 正方形巡游 | ① → ④ → ⑤ → 取餐口 | 90° 转向与循环 |
 | 全桌大挑战 | ① → ② → ③ → ④ → ⑤ → 取餐口 | 合并直行距离、规划完整路线 |
 
-积木支持拖入、吸附、重排、拆单块、复制、删除、撤销、重做、缩放和平移。循环最多嵌套 4 层；每个循环 1—8 次；展开后最多执行 128 条动作。点击“看 Python 逻辑”可查看等价的 `move()`、`turn_left()`、`turn_right()` 和 `for` 缩进。
+积木支持拖入、吸附、重排、拆单块、复制、删除、撤销、重做、缩放和平移。循环最多嵌套 4 层；每个循环 1—8 次；最多连接 40 个直行或转向积木，展开后最多执行 128 条动作。点击“更多 → 看 Python 逻辑”可查看等价的 `move()`、`turn_left()`、`turn_right()` 和 `for` 缩进。方格餐厅只能沿横线或竖线直行；输入其他转角后，需要先转回上、下、左、右方向再前进。
 
 ### 角度挑战
 

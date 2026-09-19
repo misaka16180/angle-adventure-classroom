@@ -16,7 +16,8 @@
 │  ├─ style.css / blocks.css / duel.css
 │  └─ THIRD-PARTY-NOTICES.txt   # Blockly 等第三方声明
 ├─ scripts/
-│  └─ build.py                  # 把 app 内资源内嵌为单文件并生成 dist
+│  ├─ build.py                  # 把 app 内资源内嵌为单文件并生成 dist
+│  └─ check_release.py          # 检查资源、文档链接、ZIP 和产物一致性
 ├─ tests/                       # Node 标准库回归测试
 ├─ docs/
 │  ├─ images/                   # README、指南使用的当前版本截图
@@ -33,14 +34,17 @@
 
 ## 本地开发
 
-需要 Node.js 18+ 和 Python 3。进入仓库根目录后：
+需要 Node.js 18+ 和 Python 3；测试使用 Node 标准库，不需要先安装 npm 依赖。进入仓库根目录后：
 
 ```bash
 npm test                 # 运行内置的模型与回放回归测试
 python scripts/build.py  # 生成根 index.html 与 dist 离线文件
+python scripts/check_release.py  # 可独立复查构建产物与文档引用
 ```
 
 公开仓库不捆绑 Playwright 浏览器依赖；触控拖拽、窄屏和双人赛请按教师指南手动验收，或在维护者自己的 Playwright 环境中运行 UI 脚本。
+
+每次推送 `main` 或提交 Pull Request，GitHub Actions 会运行上述模型测试与构建检查，防止文档断链、离线包漏图和在线/离线文件不一致。
 
 开发时可直接打开 `app/index.html`，但它依赖同目录的 Blockly 和本地脚本；修改后用 `python scripts/build.py` 验证最终单文件，而不要只检查开发目录。
 
@@ -68,7 +72,7 @@ python scripts/build.py  # 生成根 index.html 与 dist 离线文件
 
 ### Blockly 积木
 
-`blockly-adapter.js` 负责 Blockly 工作区、触控工具栏、数字盘和程序序列转换。自定义重复积木使用真实 C 形语句槽，输出成 `repeat` 节点，再由 `engine.compile()` 配对和展开。拖动循环、拖出内部动作、嵌套循环和连接到“程序开始”后的主链是关键回归场景。
+`blockly-adapter.js` 负责 Blockly 工作区、触控工具栏和数字盘；`block-adapter.js` 读取实际积木连接，输出 `repeat` / `endRepeat` 边界标记，再由 `engine.compile()` 配对并生成语法树和展开序列。拖动循环、拖出内部动作、嵌套循环和连接到“程序开始”后的主链是关键回归场景。
 
 `app/blocks.css` 只负责积木区与餐厅大屏布局；在 900 px 以下不应假设双人赛的左右栏仍可见。调整工具栏时保持按钮的可触控尺寸，不要把“更多”菜单中的教师示例、Python、清空和从头验证移除。
 
@@ -114,18 +118,19 @@ python scripts/build.py  # 生成根 index.html 与 dist 离线文件
 1. 读取 `app/index.html` 及其本地 CSS、JavaScript、Blockly 资源；
 2. 生成根目录 `index.html` 供 GitHub Pages 使用；
 3. 生成 `dist/角度探险家.html`；
-4. 生成 `dist/角度探险家-离线课堂.zip`，包含单文件、`教师使用指南.md`、`使用说明.md` 和 `THIRD-PARTY-NOTICES.txt`；
-5. 校验输出中没有指向本地 `work/`、临时端口或外部 CDN 的脚本地址。
+4. 生成 `dist/角度探险家-离线课堂.zip`，包含单文件、`教师使用指南.md`、`使用说明.md`、`images/` 中的截图和 `THIRD-PARTY-NOTICES.txt`；教师指南的 `images/...` 相对路径在解压后仍然有效；
+5. 生成 Release 使用的英文文件名副本 `dist/angle-adventure-classroom.html` 和 `dist/angle-adventure-classroom-offline.zip`，它们与对应中文产物内容相同；
+6. 自动运行 `scripts/check_release.py`，检查资源、文档引用、ZIP 内图文路径及发布产物一致性。英文副本由脚本生成，不提交到 Git。
 
 发布前依次执行：
 
 ```bash
 npm test
 python scripts/build.py
-node tests/offline-check.cjs
+python scripts/check_release.py
 ```
 
-然后从 `dist/角度探险家.html` 实际打开一次，检查导航、全屏、角度拖动、积木拖拽、双人赛和窄屏提示。不要把未通过的测试截图当成文档图片。
+构建时已经自动执行一次发布检查；最后一条命令用于上传前独立复核。然后从 `dist/角度探险家.html` 实际打开一次，检查导航、全屏、角度拖动、积木拖拽、双人赛和窄屏提示。标准库检查不能替代浏览器交互验收。不要把未通过的测试截图当成文档图片。
 
 ### GitHub Pages
 
@@ -138,17 +143,19 @@ Pages 使用根目录生成的 `index.html`。推送默认分支后，在仓库 
 
 ### Release
 
-推荐用 `v1.0.0` 作为第一次公开发布，附件包括：
+首次发布为 `v1.0.0`；`v1.0.1` 修正图文离线包、说明与答题标记。后续发布使用新的版本标签，上传构建脚本生成的附件：
 
-- `angle-adventure-classroom-offline.zip`（Release 附件名，内容来自 `dist/角度探险家-离线课堂.zip`）；
-- `angle-adventure-classroom.html`（Release 附件名，内容来自 `dist/角度探险家.html`）；
-- 当前 `README.md` 和教师指南的链接说明。
+- `dist/angle-adventure-classroom-offline.zip`：包含图文指南和全部图片的离线课堂包；
+- `dist/angle-adventure-classroom.html`：可直接打开的单文件应用。
+
+Release 说明应链接当前 `README.md` 和教师指南，并写明本版变化。仓库首页的 About 需分别设置简介、在线应用地址和主题标签；README 不会自动填充 About。
 
 Release 页面可使用 [releases/latest](https://github.com/misaka16180/angle-adventure-classroom/releases/latest) 作为下载入口。版本号更新时，把截图和文档一起检查，不要让 README 宣传新功能而离线包仍是旧构建。
 
 ## 质量检查清单
 
 - [ ] `npm test` 通过，尤其是 engine 的循环配对、边界、送餐顺序和恢复朝向。
+- [ ] `python scripts/check_release.py` 通过，离线 ZIP 的教师指南图片能从包内找到。
 - [ ] 在目标一体机上手动验收触控拖动、数字盘、Blockly 循环、双人计时、自动切题、结果/讲评门槛和 861 px 窄屏。
 - [ ] 1280×800、1366×768、1920×1080、3840×2160 至少各打开一次；1920×1080 是推荐课堂基准。
 - [ ] 双人赛 900 px 以下有明确提示，900 px 以上能恢复左右栏。
